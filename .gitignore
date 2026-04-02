@@ -1,0 +1,13 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+backend/.venv/
+
+# Local database
+backend/chat.db
+
+# Editor settings
+.vscode/
