@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatroom MVP</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="chat-panel">
+        <header class="chat-header">
+          <div>
+            <h1>Room: General</h1>
+            <p id="statusText">Connecting...</p>
+          </div>
+          <span id="usernameBadge" class="badge">Not joined</span>
+        </header>
+
+        <div id="messages" class="messages"></div>
+        <p id="typingText" class="typing"></p>
+
+        <form id="chatForm" class="composer">
+          <input id="messageInput" type="text" maxlength="500" placeholder="Type a message..." autocomplete="off" />
+          <button type="submit">Send</button>
+        </form>
+      </section>
+
+      <aside class="sidebar">
+        <h2>Online users</h2>
+        <ul id="userList"></ul>
+      </aside>
+    </main>
+
+    <div id="joinModal" class="modal">
+      <div class="modal-content">
+        <h2>Join chatroom</h2>
+        <p>Pick a display name to start chatting.</p>
+        <form id="joinForm">
+          <input id="nameInput" type="text" maxlength="24" placeholder="Your name" required />
+          <button type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
