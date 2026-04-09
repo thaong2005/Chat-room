@@ -27,7 +27,24 @@ A local-first chatroom MVP inspired by Discord/Messenger flows, focused on one r
 ## Notes
 - Messages are persisted in `backend/chat.db`.
 - Max message length is 500 characters.
+- Simple bad-word filter is enabled with ANTLR grammar (`backend/app/filter/ChatMessage.g4`).
+- Default bad words are in `backend/app/filter/bad_words.txt` (one word per line).
+- Messages containing invalid words are masked before saving and broadcasting.
 - Open two browser tabs/windows to test real-time room behavior.
+
+## Regenerate ANTLR parser/lexer
+If you update the grammar, regenerate Python files with:
+
+```powershell
+java -jar "C:/antlr/antlr4-4.9.2-complete.jar" -Dlanguage=Python3 -o "backend/app/filter/generated" "backend/app/filter/ChatMessage.g4"
+```
+
+Or use the helper script:
+
+```powershell
+python backend/run.py gen
+python backend/run.py test
+```
 
 ## Next upgrade ideas
 - Multi-room support with room code join/create
