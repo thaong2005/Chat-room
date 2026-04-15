@@ -91,6 +91,17 @@ async def health() -> dict[str, str]:
 async def index() -> FileResponse:
     return FileResponse(PUBLIC_DIR / "index.html")
 
+@app.get("/login")
+async def login() -> FileResponse:
+    return FileResponse(PUBLIC_DIR / "loginPage.html")
+
+@app.get("/register")
+async def register() -> FileResponse:
+    return FileResponse(PUBLIC_DIR / "registerPage.html")
+
+@app.get("/styles.css")
+async def styles() -> FileResponse:
+    return FileResponse(PUBLIC_DIR / "styles.css")
 
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket) -> None:

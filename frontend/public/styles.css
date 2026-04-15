@@ -197,6 +197,115 @@ button {
   gap: 0.7rem;
 }
 
+/* --- Login & Register Page Styles --- */
+
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 1rem;
+  background-color: white;
+}
+
+.auth-card {
+  width: min(400px, 100%);
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 2.5rem;
+  box-shadow: 0 12px 40px rgba(10, 32, 29, 0.12);
+  text-align: center;
+  z-index: 10;
+}
+
+.auth-card h2 {
+  margin: 0 0 0.5rem 0;
+  color: var(--accent-strong);
+  font-size: 1.75rem;
+}
+
+.auth-card p.subtitle {
+  margin: 0 0 2rem 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Form Layout */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.auth-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 0.4rem;
+}
+
+.auth-group label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--muted);
+  margin-left: 0.2rem;
+}
+
+/* Input style */
+.auth-form input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg);
+  font-size: 1rem;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: #ffffff; /* Becomes white on focus */
+  box-shadow: 0 0 0 3px rgba(22, 122, 107, 0.1);
+}
+
+/* Button style */
+.auth-form button {
+  width: 100%;
+  padding: 0.9rem;
+  border: 0;
+  background: linear-gradient(160deg, var(--accent), var(--accent-strong));
+  color: #ffffff;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: opacity 0.2s;
+}
+
+.auth-form button:hover {
+  opacity: 0.9;
+}
+
+/* Switch link styling */
+.auth-switch {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.auth-switch a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.auth-switch a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 860px) {
   .app-shell {
     grid-template-columns: 1fr;

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatroom Messenger - Login</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="auth-wrapper">
+
+    <!-- Register Card -->
+    <div class="auth-card auth-hidden" id="registerCard">
+        <h2>Create Account</h2>
+        <p class="subtitle">Join the community today</p>
+        <form class="auth-form" action="/register" method="POST">
+            <div class="auth-group">
+                <label>Username</label>
+                <input type="text" name="username" placeholder="Choose a username" required>
+            </div>
+            <div class="auth-group">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Create a password" required>
+            </div>
+            <button type="submit">Register Now</button>
+        </form>
+        <p class="auth-switch">
+            Already have an account? <a href="/login">Login instead</a>
+        </p>
+    </div>
+</div>
+
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
