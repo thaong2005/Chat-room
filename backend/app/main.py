@@ -8,6 +8,7 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
 from .db import get_recent_messages, init_db, save_message
+from .filter.profanity_filter import AntlrWordFilter, load_bad_words
 
 MAX_MESSAGE_LENGTH = 500
 
@@ -68,6 +69,9 @@ manager = ConnectionManager()
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 PUBLIC_DIR = PROJECT_ROOT / "frontend" / "public"
+BAD_WORDS_FILE = Path(__file__).resolve().parent / "filter" / "bad_words.txt"
+
+word_filter = AntlrWordFilter(load_bad_words(BAD_WORDS_FILE))
 
 if PUBLIC_DIR.exists():
     app.mount("/static", StaticFiles(directory=PUBLIC_DIR), name="static")
@@ -138,6 +142,8 @@ async def websocket_endpoint(websocket: WebSocket) -> None:
                 if username in manager.typing_users:
                     manager.typing_users.remove(username)
                     await manager.broadcast_typing_users()
+
+                content, _ = word_filter.sanitize(content)
 
                 timestamp = save_message(username, content)
                 await manager.broadcast(
