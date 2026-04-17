@@ -14,7 +14,13 @@
             <h1>Room: General</h1>
             <p id="statusText">Connecting...</p>
           </div>
-          <span id="usernameBadge" class="badge">Not joined</span>
+          <div class="header-right">
+            <span id="usernameBadge" class="badge">Not joined</span>
+          
+            <form action="/logout" method="POST" style="display: inline;">
+              <button type="submit" class="logout-btn">Logout</button>
+            </form>
+          </div>
         </header>
 
         <div id="messages" class="messages"></div>
@@ -43,6 +49,8 @@
       </div>
     </div>
 
-    <script src="/static/app.js"></script>
+    </div>
+
+    <script src="/app.js"></script>
   </body>
 </html>

@@ -316,3 +316,44 @@ button {
     min-height: 64vh;
   }
 }
+
+.status-msg {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    display: none;
+}
+
+.status-msg.error {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #f87171;
+}
+
+.status-msg.success {
+    background-color: #dcfce7;
+    color: #15803d;
+    border: 1px solid #4ade80;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logout-btn {
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background 0.2s;
+}
+
+.logout-btn:hover {
+    background-color: #dc2626;
+}
